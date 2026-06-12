@@ -39,7 +39,7 @@ export function HeroSection() {
     <section
       id="home"
       ref={ref}
-      className="relative h-screen min-h-[700px] overflow-hidden flex items-center"
+      className="relative min-h-[760px] lg:min-h-screen overflow-hidden flex items-center py-28 md:py-32"
       
     >
       {/* ── LAYER 1 - Background image (deepest, slowest) ── */}
@@ -105,7 +105,7 @@ export function HeroSection() {
       {/* ── CONTENT - sits above all layers ── */}
       <motion.div
         style={{ y: layerText, opacity: heroOpacity }}
-        className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-20"
+        className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-4 md:pt-10"
       >
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -175,7 +175,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={loaded ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 1.0 }}
-            className="flex flex-wrap gap-4"
+            className="relative z-20 flex flex-wrap gap-4"
           >
             <motion.button
               whileHover={{ scale: 1.04 }}
@@ -254,7 +254,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={loaded ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 1.3 }}
-          className="absolute bottom-0 left-6 right-6 flex flex-wrap gap-8 py-7 border-t border-[rgba(196,169,125,0.12)]"
+          className="relative z-10 mt-16 grid grid-cols-2 gap-x-6 gap-y-5 border-t border-[rgba(196,169,125,0.12)] pt-6 sm:flex sm:flex-wrap sm:gap-8 lg:mt-20"
         >
           {[
             { num: "500+", label: "Projects Completed" },
@@ -262,7 +262,7 @@ export function HeroSection() {
             { num: "20+", label: "Product Categories" },
             { num: "100%", label: "Client Satisfaction" },
           ].map((stat) => (
-            <div key={stat.label} className="flex items-center gap-3">
+            <div key={stat.label} className="flex min-w-[130px] items-center gap-3">
               <span
                 className="text-xl text-[#c4a97d]"
                 style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}
