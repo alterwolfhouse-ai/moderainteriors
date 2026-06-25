@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { motion, useInView } from "motion/react";
-import { Phone, Mail, MapPin, Send, CheckCircle } from "lucide-react";
+import { Phone, Mail, MapPin, Send, CheckCircle, FileText } from "lucide-react";
 
 export function ContactSection() {
   const ref = useRef<HTMLDivElement>(null);
@@ -55,11 +55,13 @@ export function ContactSection() {
             {/* Contact info */}
             <div className="flex flex-col gap-6">
               {[
-                { icon: Phone, label: "Call Us", value: "Consultation requests open" },
-                { icon: Mail, label: "Email Us", value: "Add business email before launch" },
-                { icon: MapPin, label: "Visit Us", value: "Kochi, Kerala - Available Pan-India" },
+                { icon: Phone, label: "Call Us", value: "+91 99106 03157", href: "tel:+919910603157" },
+                { icon: Mail, label: "Email Us", value: "support@moderainteriors.in", href: "mailto:support@moderainteriors.in" },
+                { icon: MapPin, label: "Visit Us", value: "Shop No. 2, SS Plaza, Harsh Vihar, Chipiyana Buzurg, Greater Noida, Uttar Pradesh 201009" },
+                { icon: FileText, label: "GSTIN", value: "09AISPR4537K1ZE" },
               ].map((item) => {
                 const Icon = item.icon;
+                const ValueTag = item.href ? "a" : "p";
                 return (
                   <div key={item.label} className="flex items-center gap-4">
                     <div className="w-10 h-10 bg-[rgba(196,169,125,0.1)] flex items-center justify-center shrink-0">
@@ -69,9 +71,13 @@ export function ContactSection() {
                       <p className="text-[#f0ebe2]/40 text-xs tracking-widest uppercase mb-0.5" style={{ fontFamily: "var(--font-body)" }}>
                         {item.label}
                       </p>
-                      <p className="text-[#f0ebe2] text-sm" style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}>
+                      <ValueTag
+                        href={item.href}
+                        className="text-[#f0ebe2] text-sm hover:text-[#c4a97d] transition-colors"
+                        style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
+                      >
                         {item.value}
-                      </p>
+                      </ValueTag>
                     </div>
                   </div>
                 );

@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Instagram, Facebook, Youtube } from "lucide-react";
+import { Phone, Mail, MapPin, Instagram, Facebook, Youtube, FileText } from "lucide-react";
 
 const products = [
   "PVC Panels", "Fluted Panels", "Charcoal Panels", "Lower Wall Panels",
@@ -43,15 +43,19 @@ export function Footer() {
             <div className="flex flex-col gap-3">
               <div className="flex items-center gap-3">
                 <Phone size={13} className="text-[#c4a97d] shrink-0" />
-                <span className="text-[#f0ebe2]/50 text-xs" style={{ fontFamily: "var(--font-body)" }}>Consultation requests open</span>
+                <a href="tel:+919910603157" className="text-[#f0ebe2]/50 text-xs hover:text-[#c4a97d] transition-colors" style={{ fontFamily: "var(--font-body)" }}>+91 99106 03157</a>
               </div>
               <div className="flex items-center gap-3">
                 <Mail size={13} className="text-[#c4a97d] shrink-0" />
-                <span className="text-[#f0ebe2]/50 text-xs" style={{ fontFamily: "var(--font-body)" }}>Add business email before launch</span>
+                <a href="mailto:support@moderainteriors.in" className="text-[#f0ebe2]/50 text-xs hover:text-[#c4a97d] transition-colors" style={{ fontFamily: "var(--font-body)" }}>support@moderainteriors.in</a>
               </div>
               <div className="flex items-center gap-3">
                 <MapPin size={13} className="text-[#c4a97d] shrink-0" />
-                <span className="text-[#f0ebe2]/50 text-xs" style={{ fontFamily: "var(--font-body)" }}>Kochi, Kerala - Pan-India</span>
+                <span className="text-[#f0ebe2]/50 text-xs" style={{ fontFamily: "var(--font-body)" }}>Shop No. 2, SS Plaza, Greater Noida, UP 201009</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <FileText size={13} className="text-[#c4a97d] shrink-0" />
+                <span className="text-[#f0ebe2]/50 text-xs" style={{ fontFamily: "var(--font-body)" }}>GSTIN: 09AISPR4537K1ZE</span>
               </div>
             </div>
             <div className="flex gap-3 mt-7">
